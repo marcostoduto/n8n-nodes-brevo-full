@@ -1,0 +1,63 @@
+{
+  "name": "n8n-nodes-brevo-full",
+  "version": "0.1.0",
+  "description": "n8n community node for Brevo (ex Sendinblue) covering every endpoint of the Brevo API v3, plus a webhook trigger",
+  "keywords": [
+    "n8n-community-node-package",
+    "brevo",
+    "sendinblue",
+    "email",
+    "sms",
+    "whatsapp",
+    "crm",
+    "marketing",
+    "transactional"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/marcostoduto/n8n-nodes-brevo-full",
+  "author": {
+    "name": "Marco Stoduto"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcostoduto/n8n-nodes-brevo-full.git"
+  },
+  "engines": {
+    "node": ">=20.15"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && node scripts/copy-assets.js",
+    "dev": "tsc --watch",
+    "generate": "node scripts/generate-operations.js",
+    "format": "prettier nodes credentials scripts test --write",
+    "lint": "eslint nodes credentials",
+    "lintfix": "eslint nodes credentials --fix",
+    "test": "node --import tsx --test test/*.test.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "index.js"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/BrevoFullApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Brevo/BrevoFull.node.js",
+      "dist/nodes/Brevo/BrevoFullTrigger.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "n8n-workflow": ">=1.82.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}

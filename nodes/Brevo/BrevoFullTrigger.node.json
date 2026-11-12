@@ -1,0 +1,10 @@
+{
+  "node": "n8n-nodes-brevo-full.brevoFullTrigger",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": ["Communication", "Marketing"],
+  "resources": {
+    "credentialDocumentation": [{ "url": "https://developers.brevo.com/docs/getting-started" }],
+    "primaryDocumentation": [{ "url": "https://github.com/marcostoduto/n8n-nodes-brevo-full" }]
+  }
+}
